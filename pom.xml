@@ -1,31 +1,53 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
- <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
- <groupId>gcfv2auditlogs</groupId>
- <artifactId>http</artifactId>
- <version>0.0.1</version>
- <name>Audit Logs Function for GCFv2</name>
+    <groupId>gcfv2.image.validator</groupId>
+    <artifactId>image-validator</artifactId>
+    <version>0.0.1</version>
+    <name>Filename image validator</name>
 
- <properties>
-  <maven.compiler.release>25</maven.compiler.release>
- </properties>
+    <properties>
+        <maven.compiler.release>25</maven.compiler.release>
+    </properties>
 
- <dependencies>
-   <dependency>
-     <groupId>com.google.cloud.functions</groupId>
-     <artifactId>functions-framework-api</artifactId>
-     <version>1.1.4</version>
-   </dependency>
-   <dependency>
-     <groupId>io.cloudevents</groupId>
-     <artifactId>cloudevents-api</artifactId>
-     <version>2.2.0</version>
-   </dependency>
-   <dependency>
-     <groupId>com.google.code.gson</groupId>
-     <artifactId>gson</artifactId>
-     <version>2.10.1</version>
-    </dependency>
- </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.cloud.functions</groupId>
+            <artifactId>functions-framework-api</artifactId>
+            <version>1.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cloudevents</groupId>
+            <artifactId>cloudevents-api</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloudevent-types</artifactId>
+            <version>0.17.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-storage</artifactId>
+            <version>2.69.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>4.35.1</version>
+        </dependency>
+
+    </dependencies>
 
 </project>
