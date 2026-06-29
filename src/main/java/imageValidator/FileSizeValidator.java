@@ -56,7 +56,7 @@ public class FileSizeValidator implements CloudEventsFunction {
                         objectName, file.getSize(), MAX_SIZE_BYTES));
                 deleteFileFromBucket(file);
 
-            } else if(isSigridPhoto(file)) {
+            } else if(isValidPhoto(file)) {
                 logger.info(String.format("✅ ÉXITO: El archivo '%s' es una foto valida.", objectName));
             }
 
@@ -69,7 +69,7 @@ public class FileSizeValidator implements CloudEventsFunction {
         return file.getName().toLowerCase().matches(regex.toLowerCase());
     }
 
-    private boolean isSigridPhoto(Blob file) {
+    private boolean isValidPhoto(Blob file) {
         String regex = ".*edit-me.*"; // edit this regex to match your file naming convention
         if (!validateFileName(file, regex)) {
             boolean deleted = deleteFileFromBucket(file);
